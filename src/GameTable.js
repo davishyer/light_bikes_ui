@@ -24,7 +24,7 @@ const TableRow = ({row, player}) => {
   const activeColor = {
     "yellow": "darkkhaki",
     "blue": "darkblue",
-    "green": "darkcyan",
+    "green": "darkgreen",
     "red": "darkred"
   }
 
