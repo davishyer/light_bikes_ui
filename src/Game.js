@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import GameTable from './GameTable';
+import './App.css';
 
 class Game extends Component {
   render() {
@@ -7,8 +8,8 @@ class Game extends Component {
     const contendors = players.map(p => p.name).join(' vs. ')
 
     return (
-      <div>
-        <GameTable board={board} />
+      <div className="Game">
+        <GameTable board={board} players={players} />
         <div>
           {contendors}
         </div>

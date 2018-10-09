@@ -9,7 +9,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    setInterval(() => this.fetchGames(), 5000)
+    setInterval(() => this.fetchGames(), 50)
   }
 
   render() {
@@ -26,7 +26,6 @@ class App extends Component {
 
   fetchGames() {
     axios.get('http://localhost:8080/games').then(res => {
-      console.log(res.data.games)
       this.setState({
         games: res.data.games
       })
