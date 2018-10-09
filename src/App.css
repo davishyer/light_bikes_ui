@@ -1,13 +1,21 @@
 .App {
   text-align: center;
+  color: white;
   background-color: #282c34;
+  font-size: calc(10px + 2vmin);
+}
+
+.App-header {
+  font-size: 125%;
+  padding-top: 1rem;
+}
+
+.App-games {
   min-height: 100vh;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
   flex-wrap: wrap;
 }
 

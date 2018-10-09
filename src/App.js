@@ -17,7 +17,12 @@ class App extends Component {
 
     return (
       <div className="App">
-        {games.map(g => <Game game={g} key={g.id} />)}
+        <div className="App-header">
+          Light Bikes!
+        </div>
+        <div className="App-games">
+          {games.map(g => <Game game={g} key={g.id} />)}
+        </div>
       </div>
     );
   }
