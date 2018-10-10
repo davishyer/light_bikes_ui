@@ -9,6 +9,7 @@ class App extends Component {
   }
 
   componentDidMount() {
+    // this.fetchGames()
     setInterval(() => this.fetchGames(), 50)
   }
 
@@ -17,22 +18,29 @@ class App extends Component {
 
     return (
       <div className="App">
-        <div className="App-header">
+        <div className="App-header" onClick={this.handleClick}>
           Light Bikes!
         </div>
         <div className="App-games">
           {games.map(g => <Game game={g} key={g.id} />)}
+          {games.length === 0 && "no active games"}
         </div>
       </div>
     );
   }
 
   fetchGames() {
-    axios.get('http://localhost:8080/games').then(res => {
+    axios.get(`http://localhost:8080/games/${window.location.hash.substr(1)}`).then(res => {
       this.setState({
         games: res.data.games
       })
     })
+  }
+
+  handleClick() {
+    if (window.location.hash !== "") {
+      window.location.hash = ""
+    }
   }
 }
 

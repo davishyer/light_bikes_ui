@@ -8,6 +8,12 @@
 .App-header {
   font-size: 125%;
   padding-top: 1rem;
+  cursor: pointer;
+}
+
+.App-header:hover {
+  color: deepskyblue;
+  text-decoration: underline;
 }
 
 .App-games {
@@ -24,6 +30,7 @@
   padding: 10px;
   margin: 5px;
   width: 400px;
+  cursor: pointer;
 }
 
 .Game-board {

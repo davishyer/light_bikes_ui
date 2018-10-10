@@ -4,11 +4,11 @@ import './App.css';
 
 class Game extends Component {
   render() {
-    const { game: { board, players } } = this.props
+    const { game: { board, id, players } } = this.props
     const contendors = players.map(this.formatPlayerName)
 
     return (
-      <div className="Game">
+      <div className="Game" onClick={this.handleClick.bind(this, id)}>
         <GameTable board={board} players={players} />
         <div className="Game-footer">
           <div className="Game-size_label">
@@ -34,10 +34,16 @@ class Game extends Component {
     const effectiveColor = alive ? color : 'white'
 
     return (
-      <span style={{ color: lightColor[effectiveColor] }}>
+      <span key={color} style={{ color: lightColor[effectiveColor] }}>
         {name}
       </span>
     );
+  }
+
+  handleClick(id) {
+    if (window.location.hash.substr(1) !== id) {
+      window.location.hash = id
+    }
   }
 }
 
