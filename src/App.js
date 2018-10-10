@@ -22,7 +22,7 @@ class App extends Component {
           Light Bikes!
         </div>
         <div className="App-games">
-          {games.map(g => <Game game={g} key={g.id} />)}
+          {games.slice(0,12).map(g => <Game game={g} key={g.id} />)}
           {games.length === 0 && "no active games"}
         </div>
       </div>
