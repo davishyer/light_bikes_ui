@@ -32,6 +32,21 @@
   border-spacing: 1px;
 }
 
+.Game-footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.Game-size_label {
+  color: #ddd;
+  font-size: 75%;
+  margin-right: 10px;
+}
+.Game-size_label sup {
+  font-size: 50%;
+}
+
 .Game-players span+span:before {
   content: ' vs ';
   color: white;

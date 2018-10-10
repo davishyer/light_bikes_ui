@@ -10,8 +10,13 @@ class Game extends Component {
     return (
       <div className="Game">
         <GameTable board={board} players={players} />
-        <div className="Game-players">
-          {contendors}
+        <div className="Game-footer">
+          <div className="Game-size_label">
+            {board.length}<sup>2</sup>
+          </div>
+          <div className="Game-players">
+            {contendors}
+          </div>
         </div>
       </div>
     )
