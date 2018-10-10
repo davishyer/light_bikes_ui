@@ -4,10 +4,8 @@ import './App.css';
 
 class Game extends Component {
   render() {
-    const { game: { board, players, winner } } = this.props
-    const contendors = players.map(
-      this.formatPlayerName.bind(this, winner)
-    )
+    const { game: { board, players } } = this.props
+    const contendors = players.map(this.formatPlayerName)
 
     return (
       <div className="Game">
@@ -19,22 +17,22 @@ class Game extends Component {
     )
   }
 
-  formatPlayerName(winnerColor, player) {
-    const { name, color } = player
+  formatPlayerName(player) {
+    const { name, color, alive } = player
     const lightColor = {
       "yellow": "yellow",
       "blue": "blue",
       "green": "lightgreen",
-      "red": "red"
+      "red": "red",
+      "white": "white",
     }
+    const effectiveColor = alive ? color : 'white'
 
-    return winnerColor === color ?
-      (
-        <span style={{ color: lightColor[color] }}>
-          {name}
-        </span>
-      ) :
-      (<span>{name}</span>)
+    return (
+      <span style={{ color: lightColor[effectiveColor] }}>
+        {name}
+      </span>
+    );
   }
 }
 
