@@ -11,6 +11,7 @@
   },
   "scripts": {
     "start": "PORT=3001 react-scripts start",
+    "deploy": "react-scripts build && aws s3 cp ./build/ s3://light-bikes-ui/ --region us-west-2 --recursive",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
