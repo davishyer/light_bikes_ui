@@ -3,6 +3,9 @@ import './App.css';
 import axios from 'axios';
 import Game from './Game';
 
+const serverUrl = 'http://light-bikes.inseng.net';
+// const serverUrl = 'http://localhost:8080';
+
 class App extends Component {
   state = {
     games: [],
@@ -30,11 +33,15 @@ class App extends Component {
   }
 
   fetchGames() {
-    axios.get(`http://localhost:8080/games/${window.location.hash.substr(1)}`).then(res => {
+    axios.get(`${serverUrl}/games/${this.getCurrentGameId()}`).then(res => {
       this.setState({
         games: res.data.games
       })
     })
+  }
+
+  getCurrentGameId() {
+    return window.location.hash.substr(1)
   }
 
   handleClick() {
