@@ -10,7 +10,7 @@ class GameTable extends Component {
         <tbody>
           { board.map((row, idx) => {
               return (
-                <TableRow key={idx} row={row} player={players.find(p => p.x === idx)} />
+                <TableRow key={idx} row={row} players={players.filter(p => p.x === idx)} />
               )
             }
           )}
@@ -20,9 +20,9 @@ class GameTable extends Component {
   }
 }
 
-const TableRow = ({row, player}) => {
+const TableRow = ({row, players}) => {
   const activeColor = {
-    "yellow": "darkkhaki",
+    "yellow": "lightsalmon",
     "blue": "darkblue",
     "green": "darkgreen",
     "red": "darkred"
@@ -32,7 +32,7 @@ const TableRow = ({row, player}) => {
     <tr>
       { row.map((color, idx) => {
           let cellColor = color
-          if (player && player.y === idx) {
+          if (players.length > 0 && players.find(p => p.y === idx)) {
             cellColor = activeColor[color]
           }
           return (
