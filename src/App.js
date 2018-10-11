@@ -3,8 +3,9 @@ import './App.css';
 import axios from 'axios';
 import Game from './Game';
 
-const serverUrl = 'http://light-bikes.inseng.net';
-// const serverUrl = 'http://localhost:8080';
+const fetchInterval = 100
+const serverUrl = 'http://light-bikes.inseng.net'
+// const serverUrl = 'http://localhost:8080'
 
 class App extends Component {
   state = {
@@ -12,8 +13,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // this.fetchGames()
-    setInterval(() => this.fetchGames(), 50)
+    this.triggerFetch()
   }
 
   render() {
@@ -32,11 +32,18 @@ class App extends Component {
     );
   }
 
+  triggerFetch() {
+    setTimeout(() => this.fetchGames(), fetchInterval)
+  }
+
   fetchGames() {
     axios.get(`${serverUrl}/games/${this.getCurrentGameId()}`).then(res => {
       this.setState({
         games: res.data.games
       })
+      this.triggerFetch()
+    }).catch(e => {
+      this.triggerFetch()
     })
   }
 
