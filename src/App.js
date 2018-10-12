@@ -48,7 +48,7 @@ class App extends Component {
       this.triggerFetch()
     }).catch(e => {
       // if the game isn't found, no need to continue polling for it
-      if (e.response.status === 404) {
+      if (e.response && e.response.status === 404) {
         this.setState({
           onDeadGame: true
         })
