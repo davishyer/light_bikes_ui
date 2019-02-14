@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
 import Game from './Game';
+import BikeIcon from './BikeIcon'
 
 const fetchInterval = 100
 const serverUrl = 'http://light-bikes.inseng.net'
@@ -23,14 +24,51 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header" onClick={this.handleClick.bind(this)}>
-          Light Bikes!
+          <h1 className="App-header-title">Light Bikes /</h1>
+          <BikeIcon />
         </div>
         <div className="App-games">
           {games.slice(0,12).map(g => <Game game={g} key={g.id} />)}
-          {games.length === 0 && "no active games"}
+          {games.length === 0 && this.renderEmptyGame()}
         </div>
       </div>
     );
+  }
+
+  renderEmptyGame() {
+    const emptyGame = {
+      board: [
+        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, "yellow", null, null, null, "yellow", null, "yellow", "yellow", "yellow", "yellow", null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, "yellow", "yellow", null, null, "yellow", null, "yellow", null, null, "yellow", null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, "yellow", null, "yellow", null, "yellow", null, "yellow", null, null, "yellow", null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, "yellow", null, null, "yellow", "yellow", null, "yellow", null, null, "yellow", null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, "yellow", null, null, null, "yellow", null, "yellow", "yellow", "yellow", "yellow", null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        [null, "yellow", "yellow", "yellow", "yellow", null, null, "yellow", "yellow", null, null, "yellow", null, null, null, "yellow", null, "yellow", "yellow", "yellow", null, "yellow", "yellow", "yellow", "yellow", null],
+        [null, "yellow", null, null, null, null, "yellow", null, null, "yellow", null, "yellow", "yellow", null, "yellow", "yellow", null, "yellow", null, null, null, "yellow", null, null, null, null],
+        [null, "yellow", null, null, null, null, "yellow", null, null, "yellow", null, "yellow", null, "yellow", null, "yellow", null, "yellow", "yellow", null, null, "yellow", "yellow", "yellow", "yellow", null],
+        [null, "yellow", null, "yellow", "yellow", null, "yellow", "yellow", "yellow", "yellow", null, "yellow", null, null, null, "yellow", null, "yellow", null, null, null, null, null, null, "yellow", null],
+        [null, "yellow", null, null, "yellow", null, "yellow", null, null, "yellow", null, "yellow", null, null, null, "yellow", null, "yellow", null, null, null, null, null, null, "yellow", null],
+        [null, "yellow", "yellow", "yellow", "yellow", null, "yellow", null, null, "yellow", null, "yellow", null, null, null, "yellow", null, "yellow", "yellow", "yellow", null, "yellow", "yellow", "yellow", "yellow", null],
+        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      ],
+      players: [{ name: `Start a game at ${serverUrl}`, color: 'yellow', alive: true }]
+    }
+    return (
+      <Game game={emptyGame} />
+    )
   }
 
   triggerFetch() {

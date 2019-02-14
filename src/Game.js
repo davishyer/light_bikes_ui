@@ -9,8 +9,7 @@ class Game extends Component {
 
     return (
       <div className="Game" onClick={this.handleClick.bind(this, id)}>
-        <GameTable board={board} players={players} />
-        <div className="Game-footer">
+        <div className="Game-header">
           <div className="Game-size_label">
             {board.length}<sup>2</sup>
           </div>
@@ -18,6 +17,7 @@ class Game extends Component {
             {contendors}
           </div>
         </div>
+        <GameTable board={board} players={players} />
       </div>
     )
   }
@@ -25,11 +25,11 @@ class Game extends Component {
   formatPlayerName(player) {
     const { name, color, alive } = player
     const lightColor = {
-      "yellow": "yellow",
-      "blue": "blue",
-      "green": "lightgreen",
-      "red": "red",
-      "white": "white",
+      "yellow": "#FABE08",
+      "blue": "#54A9FF",
+      "green": "#08C17D",
+      "red": "#F26071",
+      "white": "#BAC1CC",
     }
     const effectiveColor = alive ? color : 'white'
 
@@ -41,7 +41,7 @@ class Game extends Component {
   }
 
   handleClick(id) {
-    if (window.location.hash.substr(1) !== id) {
+    if (id && window.location.hash.substr(1) !== id) {
       window.location.hash = id
     }
   }
