@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import GameTable from './GameTable';
 import './App.css';
+import Linkify from 'react-linkify'
 
 class Game extends Component {
   render() {
@@ -35,7 +36,14 @@ class Game extends Component {
 
     return (
       <span key={color} style={{ color: lightColor[effectiveColor] }}>
-        {name}
+        <Linkify
+          properties={{
+            target: '_blank',
+            style: { color: lightColor[effectiveColor] }
+          }}
+        >
+          {name}
+        </Linkify>
       </span>
     );
   }

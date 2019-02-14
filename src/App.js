@@ -64,7 +64,7 @@ class App extends Component {
         [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
         [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
       ],
-      players: [{ name: `Start a game at ${serverUrl}`, color: 'yellow', alive: true }]
+      players: [{ name: `Start a game at ${serverUrl}/swagger-ui.html`, color: 'yellow', alive: true }]
     }
     return (
       <Game game={emptyGame} />
