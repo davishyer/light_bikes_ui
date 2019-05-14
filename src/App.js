@@ -31,6 +31,15 @@ class App extends Component {
           {games.slice(0,12).map(g => <Game game={g} key={g.id} />)}
           {games.length === 0 && this.renderEmptyGame()}
         </div>
+        <div className="App-footer">
+          <span>Presented by</span>
+          <img
+            alt="Avocode Logo"
+            src={ require('./images/avocode_logo.png') }
+            height="40px"
+            width="30px"
+          />
+        </div>
       </div>
     );
   }
