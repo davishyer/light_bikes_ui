@@ -36,6 +36,7 @@ class App extends Component {
   }
 
   renderEmptyGame() {
+    const yllw = "yellow"
     const emptyGame = {
       board: [
         [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
@@ -44,19 +45,19 @@ class App extends Component {
         [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
         [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
         [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, "yellow", null, null, null, "yellow", null, "yellow", "yellow", "yellow", "yellow", null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, "yellow", "yellow", null, null, "yellow", null, "yellow", null, null, "yellow", null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, "yellow", null, "yellow", null, "yellow", null, "yellow", null, null, "yellow", null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, "yellow", null, null, "yellow", "yellow", null, "yellow", null, null, "yellow", null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, "yellow", null, null, null, "yellow", null, "yellow", "yellow", "yellow", "yellow", null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, yllw, null, null, null, yllw, null, yllw, yllw, yllw, yllw, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, yllw, yllw, null, null, yllw, null, yllw, null, null, yllw, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, yllw, null, yllw, null, yllw, null, yllw, null, null, yllw, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, yllw, null, null, yllw, yllw, null, yllw, null, null, yllw, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, yllw, null, null, null, yllw, null, yllw, yllw, yllw, yllw, null, null, null, null, null, null, null, null],
         [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
         [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
-        [null, "yellow", "yellow", "yellow", "yellow", null, null, "yellow", "yellow", null, null, "yellow", null, null, null, "yellow", null, "yellow", "yellow", "yellow", null, "yellow", "yellow", "yellow", "yellow", null],
-        [null, "yellow", null, null, null, null, "yellow", null, null, "yellow", null, "yellow", "yellow", null, "yellow", "yellow", null, "yellow", null, null, null, "yellow", null, null, null, null],
-        [null, "yellow", null, null, null, null, "yellow", null, null, "yellow", null, "yellow", null, "yellow", null, "yellow", null, "yellow", "yellow", null, null, "yellow", "yellow", "yellow", "yellow", null],
-        [null, "yellow", null, "yellow", "yellow", null, "yellow", "yellow", "yellow", "yellow", null, "yellow", null, null, null, "yellow", null, "yellow", null, null, null, null, null, null, "yellow", null],
-        [null, "yellow", null, null, "yellow", null, "yellow", null, null, "yellow", null, "yellow", null, null, null, "yellow", null, "yellow", null, null, null, null, null, null, "yellow", null],
-        [null, "yellow", "yellow", "yellow", "yellow", null, "yellow", null, null, "yellow", null, "yellow", null, null, null, "yellow", null, "yellow", "yellow", "yellow", null, "yellow", "yellow", "yellow", "yellow", null],
+        [null, yllw, yllw, yllw, yllw, null, null, yllw, yllw, null, null, yllw, null, null, null, yllw, null, yllw, yllw, yllw, null, yllw, yllw, yllw, yllw, null],
+        [null, yllw, null, null, null, null, yllw, null, null, yllw, null, yllw, yllw, null, yllw, yllw, null, yllw, null, null, null, yllw, null, null, null, null],
+        [null, yllw, null, null, null, null, yllw, null, null, yllw, null, yllw, null, yllw, null, yllw, null, yllw, yllw, null, null, yllw, yllw, yllw, yllw, null],
+        [null, yllw, null, yllw, yllw, null, yllw, yllw, yllw, yllw, null, yllw, null, null, null, yllw, null, yllw, null, null, null, null, null, null, yllw, null],
+        [null, yllw, null, null, yllw, null, yllw, null, null, yllw, null, yllw, null, null, null, yllw, null, yllw, null, null, null, null, null, null, yllw, null],
+        [null, yllw, yllw, yllw, yllw, null, yllw, null, null, yllw, null, yllw, null, null, null, yllw, null, yllw, yllw, yllw, null, yllw, yllw, yllw, yllw, null],
         [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
         [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
         [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
