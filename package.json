@@ -7,7 +7,7 @@
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-linkify": "^0.2.2",
-    "react-scripts": "2.0.4",
+    "react-scripts": "3.0.1",
     "yarn": "^1.10.1"
   },
   "scripts": {
